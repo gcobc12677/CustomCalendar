@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B31ECF81F66A5AE00F0B22D /* MCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B31ECF61F66A5AE00F0B22D /* MCalendar.swift */; };
+		4B31ECF91F66A5AE00F0B22D /* MCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B31ECF71F66A5AE00F0B22D /* MCalendar.xib */; };
 		4B44EFD51F6118C100A3CD15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B44EFD41F6118C100A3CD15 /* AppDelegate.swift */; };
 		4B44EFD71F6118C100A3CD15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B44EFD61F6118C100A3CD15 /* ViewController.swift */; };
 		4B44EFDA1F6118C100A3CD15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B44EFD81F6118C100A3CD15 /* Main.storyboard */; };
@@ -14,8 +16,6 @@
 		4B44EFDF1F6118C100A3CD15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B44EFDD1F6118C100A3CD15 /* LaunchScreen.storyboard */; };
 		4B44EFEA1F6118C100A3CD15 /* CustomCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B44EFE91F6118C100A3CD15 /* CustomCalendarTests.swift */; };
 		4B44EFF51F6118C100A3CD15 /* CustomCalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B44EFF41F6118C100A3CD15 /* CustomCalendarUITests.swift */; };
-		4B44F0051F61198F00A3CD15 /* MCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B44F0031F61198F00A3CD15 /* MCalendar.swift */; };
-		4B44F0061F61198F00A3CD15 /* MCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B44F0041F61198F00A3CD15 /* MCalendar.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B31ECF61F66A5AE00F0B22D /* MCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCalendar.swift; path = Calendar/MCalendar.swift; sourceTree = "<group>"; };
+		4B31ECF71F66A5AE00F0B22D /* MCalendar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCalendar.xib; path = Calendar/MCalendar.xib; sourceTree = "<group>"; };
 		4B44EFD11F6118C100A3CD15 /* CustomCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B44EFD41F6118C100A3CD15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B44EFD61F6118C100A3CD15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +51,6 @@
 		4B44EFF01F6118C100A3CD15 /* CustomCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B44EFF41F6118C100A3CD15 /* CustomCalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarUITests.swift; sourceTree = "<group>"; };
 		4B44EFF61F6118C100A3CD15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B44F0031F61198F00A3CD15 /* MCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MCalendar.swift; path = ../../Volvo_IOS/Volvo/MCalendar.swift; sourceTree = "<group>"; };
-		4B44F0041F61198F00A3CD15 /* MCalendar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCalendar.xib; path = ../../Volvo_IOS/Volvo/MCalendar.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B31ECF51F66A59A00F0B22D /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4B31ECF61F66A5AE00F0B22D /* MCalendar.swift */,
+				4B31ECF71F66A5AE00F0B22D /* MCalendar.xib */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
 		4B44EFC81F6118C100A3CD15 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +110,7 @@
 		4B44EFD31F6118C100A3CD15 /* CustomCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				4B44F0021F61194F00A3CD15 /* Calendar */,
+				4B31ECF51F66A59A00F0B22D /* Calendar */,
 				4B44EFD41F6118C100A3CD15 /* AppDelegate.swift */,
 				4B44EFD61F6118C100A3CD15 /* ViewController.swift */,
 				4B44EFD81F6118C100A3CD15 /* Main.storyboard */,
@@ -128,15 +137,6 @@
 				4B44EFF61F6118C100A3CD15 /* Info.plist */,
 			);
 			path = CustomCalendarUITests;
-			sourceTree = "<group>";
-		};
-		4B44F0021F61194F00A3CD15 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				4B44F0031F61198F00A3CD15 /* MCalendar.swift */,
-				4B44F0041F61198F00A3CD15 /* MCalendar.xib */,
-			);
-			name = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B44EFDF1F6118C100A3CD15 /* LaunchScreen.storyboard in Resources */,
-				4B44F0061F61198F00A3CD15 /* MCalendar.xib in Resources */,
+				4B31ECF91F66A5AE00F0B22D /* MCalendar.xib in Resources */,
 				4B44EFDC1F6118C100A3CD15 /* Assets.xcassets in Resources */,
 				4B44EFDA1F6118C100A3CD15 /* Main.storyboard in Resources */,
 			);
@@ -275,7 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B44F0051F61198F00A3CD15 /* MCalendar.swift in Sources */,
+				4B31ECF81F66A5AE00F0B22D /* MCalendar.swift in Sources */,
 				4B44EFD71F6118C100A3CD15 /* ViewController.swift in Sources */,
 				4B44EFD51F6118C100A3CD15 /* AppDelegate.swift in Sources */,
 			);
@@ -526,6 +526,7 @@
 				4B44EFFB1F6118C100A3CD15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B44EFFC1F6118C100A3CD15 /* Build configuration list for PBXNativeTarget "CustomCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +535,7 @@
 				4B44EFFE1F6118C100A3CD15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B44EFFF1F6118C100A3CD15 /* Build configuration list for PBXNativeTarget "CustomCalendarUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +544,7 @@
 				4B44F0011F6118C100A3CD15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

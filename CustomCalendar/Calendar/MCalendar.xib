@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MCalendar" customModule="CustomCalendar" customModuleProvider="target">
+            <connections>
+                <outlet property="dateContainer" destination="yoL-Yh-zgl" id="M38-ss-Ibg"/>
+                <outlet property="monthOfYear" destination="Ykd-VB-AIM" id="pIw-xF-Rwa"/>
+                <outlet property="rootView" destination="iN0-l3-epB" id="YPg-lU-Cas"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFW-BG-YeY" userLabel="dateRow">
+                    <rect key="frame" x="10" y="10" width="355" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8f-8r-49Q">
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="BLy-kq-E8i"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="calendar_lft_btn"/>
+                            <connections>
+                                <action selector="onPrevClick:" destination="-1" eventType="touchUpInside" id="JFU-XE-BSD"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-VB-AIM">
+                            <rect key="frame" x="44" y="0.0" width="267" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="008-nk-hKS">
+                            <rect key="frame" x="311" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="Yj3-LV-uRc"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="calendar_rgt_btn"/>
+                            <connections>
+                                <action selector="onNextClick:" destination="-1" eventType="touchUpInside" id="uvI-rP-NJP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="CDd-gg-fTO"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yoL-Yh-zgl">
+                    <rect key="frame" x="10" y="64" width="355" height="593"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aFW-BG-YeY" secondAttribute="trailing" constant="10" id="T2o-Io-V3u"/>
+                <constraint firstItem="aFW-BG-YeY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="i7X-3x-R2w"/>
+                <constraint firstAttribute="trailing" secondItem="yoL-Yh-zgl" secondAttribute="trailing" constant="10" id="qG2-DF-qPD"/>
+                <constraint firstItem="yoL-Yh-zgl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="qVk-Fx-sPx"/>
+                <constraint firstItem="yoL-Yh-zgl" firstAttribute="top" secondItem="aFW-BG-YeY" secondAttribute="bottom" constant="10" id="qZG-FM-Sm6"/>
+                <constraint firstAttribute="bottom" secondItem="yoL-Yh-zgl" secondAttribute="bottom" constant="10" id="sS8-qR-lE2"/>
+                <constraint firstItem="aFW-BG-YeY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="zGf-oH-xS7"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="calendar_lft_btn" width="44" height="44"/>
+        <image name="calendar_rgt_btn" width="44" height="44"/>
+    </resources>
+</document>
