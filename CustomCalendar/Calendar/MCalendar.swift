@@ -145,7 +145,6 @@ class MCalendar: UIView {
         firstDayComponents.day = 1;
         let firstDayCalendar = calendar.date(from: firstDayComponents);
         let firstDayOfWeek = calendar.component(.weekday, from: firstDayCalendar!);
-        print(firstDayOfWeek);
         
         var lastDayComponents = calendar.dateComponents([.year, .month, .day], from: currentMonthOfYear );
         lastDayComponents.month! += 1;
@@ -153,7 +152,6 @@ class MCalendar: UIView {
         lastDayComponents.day! -= 1;
         let lastDayCalendar = calendar.date(from: lastDayComponents);
         let lastDayOfMonth = calendar.component(.day, from: lastDayCalendar!);
-        print(lastDayOfMonth);
         
         for (i, date) in dates.enumerated() {
             if ((i < 7 && i < firstDayOfWeek - 1) || i > firstDayOfWeek + lastDayOfMonth - 2) {
