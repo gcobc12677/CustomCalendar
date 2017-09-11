@@ -14,7 +14,6 @@ class MCalendar: UIView {
     @IBOutlet weak var monthOfYear: UILabel!
     @IBOutlet weak var dateContainer: UIStackView!
     
-//    var dates = Set<UIButton>();
     var dates = [UIButton]();
     
     var currentMonthOfYear: Date!
