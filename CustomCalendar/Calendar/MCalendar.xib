@@ -22,12 +22,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFW-BG-YeY" userLabel="dateRow">
-                    <rect key="frame" x="10" y="10" width="355" height="44"/>
+                    <rect key="frame" x="10" y="10" width="355" height="27"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8f-8r-49Q">
-                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="27" height="27"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="44" id="BLy-kq-E8i"/>
+                                <constraint firstAttribute="width" constant="27" id="BLy-kq-E8i"/>
                             </constraints>
                             <state key="normal" title="Button" image="calendar_lft_btn"/>
                             <connections>
@@ -35,15 +35,15 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-VB-AIM">
-                            <rect key="frame" x="44" y="0.0" width="267" height="44"/>
+                            <rect key="frame" x="27" y="0.0" width="301" height="27"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="008-nk-hKS">
-                            <rect key="frame" x="311" y="0.0" width="44" height="44"/>
+                            <rect key="frame" x="328" y="0.0" width="27" height="27"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="44" id="Yj3-LV-uRc"/>
+                                <constraint firstAttribute="width" constant="27" id="Yj3-LV-uRc"/>
                             </constraints>
                             <state key="normal" title="Button" image="calendar_rgt_btn"/>
                             <connections>
@@ -53,11 +53,11 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="CDd-gg-fTO"/>
+                        <constraint firstAttribute="height" constant="27" id="CDd-gg-fTO"/>
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yoL-Yh-zgl">
-                    <rect key="frame" x="10" y="64" width="355" height="593"/>
+                    <rect key="frame" x="10" y="47" width="355" height="610"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
