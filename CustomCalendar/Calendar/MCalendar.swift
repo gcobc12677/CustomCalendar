@@ -14,7 +14,7 @@ class MCalendar: UIView {
     @IBOutlet weak var monthOfYear: UILabel!
     @IBOutlet weak var dateContainer: UIStackView!
     
-    var dates = [UIButton]();
+    var dates = [MButton]();
     
     var currentMonthOfYear: Date!
     var dateFormatter: DateFormatter!
@@ -113,6 +113,13 @@ class MCalendar: UIView {
         dateContainer.addArrangedSubview(rowContainer);
     }
     
+    func clickEvent(sender: MButton) {
+        if ((sender.date) == nil) { return; }
+        
+        chooseDate = sender.date!;
+        updateUI();
+    }
+    
     func generateDateLabels() {
         for row in 0 ..< 6 {
             let rowContainer: UIStackView = UIStackView();
@@ -122,7 +129,7 @@ class MCalendar: UIView {
             rowContainer.spacing = 5.0
 
             for dayOfWeek in 0 ..< 7 {
-                let btn = UIButton();
+                let btn = MButton();
                 btn.titleLabel?.adjustsFontSizeToFitWidth = true
                 btn.setTitle(String(format: "%d", dayOfWeek + row * 7), for: .normal);
                 btn.setTitleColor(NORMAL_COLOR, for: .normal);
@@ -131,6 +138,8 @@ class MCalendar: UIView {
                 
                 rowContainer.addArrangedSubview(btn);
                 btn.translatesAutoresizingMaskIntoConstraints = false;
+                
+                btn.addTarget(self, action: #selector(clickEvent), for: .touchUpInside);
                 
                 dates.append(btn);
             }
@@ -157,11 +166,18 @@ class MCalendar: UIView {
         
         var chooseDateComponents = calendar.dateComponents([.year, .month, .day], from: chooseDate );
         
-        for (i, date) in dates.enumerated() {
+        for (i, dateView) in dates.enumerated() {
             if ((i < 7 && i < firstDayOfWeek - 1) || i > firstDayOfWeek + lastDayOfMonth - 2) {
-                date.setTitle(nil, for: .normal);
+                dateView.setTitle(nil, for: .normal);
+                
+                dateView.date = nil;
             } else {
-                date.setTitle(String(format: "%d", i - firstDayOfWeek + 2), for: .normal);
+                dateView.setTitle(String(format: "%d", i - firstDayOfWeek + 2), for: .normal);
+                
+                var dateComponents = calendar.dateComponents([.year, .month, .day], from: currentMonthOfYear );
+                dateComponents.day = i - firstDayOfWeek + 2;
+                let dateCalendar = calendar.date(from: dateComponents);
+                dateView.date = dateCalendar;
             }
 
             if (
@@ -169,13 +185,17 @@ class MCalendar: UIView {
                 chooseDateComponents.month == firstDayComponents.month &&
                 chooseDateComponents.day == (i - firstDayOfWeek + 2)
             ) {
-                date.setTitleColor(SELECT_COLOR, for: .normal);
-                date.backgroundColor = SELECT_BG;
+                dateView.setTitleColor(SELECT_COLOR, for: .normal);
+                dateView.backgroundColor = SELECT_BG;
             } else {
-                date.setTitleColor(NORMAL_COLOR, for: .normal);
-                date.backgroundColor = NORMAL_BG;
+                dateView.setTitleColor(NORMAL_COLOR, for: .normal);
+                dateView.backgroundColor = NORMAL_BG;
             }
         }
+    }
+    
+    class MButton: UIButton {
+        var date: Date?
     }
     
     @IBAction func onPrevClick(_ sender: UIButton) {
