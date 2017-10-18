@@ -19,9 +19,11 @@ class MCalendar: UIView {
     var currentMonthOfYear: Date!
     var dateFormatter: DateFormatter!
     
+    var chooseDate: Date!
+    
     var CALENDAR_BG = UIColor(displayP3Red: 221/255, green: 221/255, blue: 221/255, alpha: 1);
     var NORMAL_COLOR = UIColor(displayP3Red: 5/255, green: 98/255, blue: 175/255, alpha: 1);
-    var SELECT_COLOR = UIColor(displayP3Red: 5/255, green: 98/255, blue: 175/255, alpha: 1);
+    var SELECT_COLOR = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1);
     var DISABLE_COLOR = UIColor(displayP3Red: 136/255, green: 136/255, blue: 136/255, alpha: 1);
     
     var NORMAL_BG = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 1);
@@ -45,6 +47,7 @@ class MCalendar: UIView {
         rootView.autoresizingMask = [.flexibleHeight, .flexibleWidth];
         
         currentMonthOfYear = Date();
+        chooseDate = Date();
         
         dateFormatter = DateFormatter();
         dateFormatter.dateFormat = "M月.YYYY";
@@ -152,12 +155,25 @@ class MCalendar: UIView {
         let lastDayCalendar = calendar.date(from: lastDayComponents);
         let lastDayOfMonth = calendar.component(.day, from: lastDayCalendar!);
         
+        var chooseDateComponents = calendar.dateComponents([.year, .month, .day], from: chooseDate );
+        
         for (i, date) in dates.enumerated() {
             if ((i < 7 && i < firstDayOfWeek - 1) || i > firstDayOfWeek + lastDayOfMonth - 2) {
                 date.setTitle(nil, for: .normal);
             } else {
                 date.setTitle(String(format: "%d", i - firstDayOfWeek + 2), for: .normal);
-                
+            }
+
+            if (
+                chooseDateComponents.year == firstDayComponents.year &&
+                chooseDateComponents.month == firstDayComponents.month &&
+                chooseDateComponents.day == (i - firstDayOfWeek + 2)
+            ) {
+                date.setTitleColor(SELECT_COLOR, for: .normal);
+                date.backgroundColor = SELECT_BG;
+            } else {
+                date.setTitleColor(NORMAL_COLOR, for: .normal);
+                date.backgroundColor = NORMAL_BG;
             }
         }
     }
